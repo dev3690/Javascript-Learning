@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Editor</title>
+  </head>
+  <body>
+    <h1>Welcome to my Text Editor</h1>
+
+    <p id="demo"></p>
+
+    <br /><br />
+
+    <textarea
+      name="txtarea"
+      id="txtarea"
+      cols="30"
+      rows="10"
+      placeholder="Enter some text"
+    ></textarea>
+
+    <br /><br />
+
+    <button id="btn-uppercase" onclick="toUpper()">UpperCase</button>
+    <button id="btn-lowercase" onclick="toLower()">LowerCase</button>
+    <label for="fontSelect">Select a font:</label>
+    <select id="fontSelect">
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Courier New">Courier New</option>
+      <option value="Verdana">Verdana</option>
+      <!-- Add more font options here -->
+    </select>
+    <button id="btn-changefont" onclick="changeFont()">Change Font</button>
+
+    <!-- <button  id="btn-countWords" onclick="countWords()">Count Words</button> -->
+    <button id="btn-countchar" onclick="countChar()">Count no. of character</button>
+    
+
+    <p id="output"></p>
+
+    <script>
+      document.getElementById("demo").innerHTML = "helo";
+
+      // let text = document.getElementById("txtarea");
+      // let op = document.getElementById("output");
+
+      function toUpper() {
+        let text = document.getElementById("txtarea");
+        let op = document.getElementById("output");
+        op.textContent = `Output : ` + text.value.toUpperCase();
+      }
+
+      function toLower() {
+        let text = document.getElementById("txtarea");
+        let op = document.getElementById("output");
+        op.textContent = `Output : ` + text.value.toLowerCase();
+      }
+
+
+      function changeFont() {
+        let text = document.getElementById("txtarea");
+        let op = document.getElementById("output");
+        
+        var selectedFont = document.getElementById("fontSelect").value;
+        
+        op.style.fontFamily = selectedFont;
+        op.textContent = `Output : ` + text.value;
+
+        // document.getElementById("demo").style.fontFamily = "Impact,Charcoal,sans-serif";
+      }
+
+      // function countWords() {
+      //   let text = document.getElementById("txtarea");
+      //   let op = document.getElementById("output");
+
+                
+      //   // Split the input text into words using a regular expression
+      //   var words = text.split(/\s+/);
+      //   // Filter out empty strings from the array of words
+      //   var filteredWords = words.filter(function(word) {
+      //           return word.trim() !== "";
+      //       });
+      //   // Get the word count by calculating the length of the filtered array
+      //   text = filteredWords.length;
+            
+      //   op.textContent = `Output : ` + text.value;
+
+      // }
+
+      function countChar() {
+        let text = document.getElementById("txtarea");
+        let op = document.getElementById("output");
+        op.textContent = `Output : ` + text.value .length;
+      }
+l
+
+
+    </script>
+  </body>
+</html>
